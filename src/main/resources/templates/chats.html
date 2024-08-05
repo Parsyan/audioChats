@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:th="https://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Chats</title>
+</head>
+<body>
+    <h1 th:each="chat : ${chats}" th:text="${chat}"></h1>
+
+    <br>
+    <div>
+        <label>
+            Chat Registration
+            <form th:action="@{/chat/register}" method="post" th:object="${newChat}" >
+
+                <label>
+                    Chat Name
+                    <input type="text" th:field="*{chatName}" >
+                </label>
+
+                <input type="submit" >
+            </form>
+        </label>
+    </div>
+</body>
+</html>
